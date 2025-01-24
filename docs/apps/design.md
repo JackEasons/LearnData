@@ -1,13 +1,11 @@
 ---
 article: false
 title: 平面设计
-icon: pic
-order: 3
+icon: fa6-solid:image
+order: 90
 ---
 
 ## 电子白板
-
-在电子白板功能普及之前，我用 Figma 对海报、图片素材进行简单剪辑，制作流程图。但电子白板的美观与自由度远胜 Figma，我现在的流程图与示意图都通过 Excalidraw 与 canvas 来完成。
 
 在电子白板功能普及之前，我使用 Figma 对海报、图片素材进行简单剪辑，制作流程图。但是，电子白板的美观和自由度远远超过 Figma，我现在的流程图和示意图都是通过 Excalidraw 和 Canvas 完成的。
 
@@ -17,23 +15,25 @@ order: 3
 
 不过，Excalidraw 没有中文手写字体，需手动修改，比如 [Excalidraw 官方版添加中文手写字体](https://blog.csdn.net/qq_34802028/article/details/127927960)，[Obsidian 中文手写体设置](https://blog.csdn.net/qq_26176515/article/details/126005295)，[网页端中文手写字体配置](https://zhuanlan.zhihu.com/p/577420136)。
 
-![](https://tc.seoipo.com/2023-01-23-20-53-36.png "手绘样例")
+![](https://img.newzone.top/2023-01-23-20-53-36.png "手绘样例")
 
 ### Canvas
 
 Canvas（画布）是所有 UI 组件的「容器」。一个场景中，可以允许多个 canvas 对象存在，也允许 canvas 之间进行「嵌套」使用。需要注意的是，场景中的任何一个 UI 对象，都必定是某个 canvas 对象的「子级」。我最常用的是 Obsidian 和秒笔的 Canvas 功能：
 
-- Obsidian Canvas：可以将图片、视频、文本、网页、文件和 Excalidraw 聚合在一起，并建立连接线和分组。
+- Logseq Canvas：操作最接近为原版 Excalidraw，将 Logseq 功能内嵌入 Excalidraw。唯一的缺点是没有分组功能。
+- Obsidian Canvas：可以将图片、视频、文本、网页、文件和 Excalidraw 聚合在一起，并建立连接线和分组，类似于简化版 FigJam。（个人使用足够了）
 
   ![等后续替代本图](https://obsidian.md/images/canvas/canvas-hero.png "Obsidian canvas 样例")
 
 - 秒笔白板：支持聚合图片、文本、表格、清单、看板和 Excalidraw，但根据作者回复，妙笔的连接线和分组功能会在 2023 的下半年才摆上开发计划。
+- Figma：FigJam 与其他白板类似，图样多很多，但功能差异不大，用得越来越少了。
 
 ## 获取页面 logo
 
 一些页面图标路径是隐藏的，无法在前端获取，可以使用 [ImageAssistant](https://chrome.google.com/webstore/detail/imageassistant-batch-imag/dbjbempljhcmhlfpfacalomonjpalpko) 扩展提取页面所有图片，或者通过搜索引擎搜索，获取网站提交给搜索引擎的 logo 图片。
 
-如果获取的图标较小，可以使用 [waifu2x](http://waifu2x.udp.jp/index.zh-CN.html) 进行最大降噪，然后多次放大 logo。其他放大算法会令 logo 变化，而 waifu2x 不会改变原图。
+如果获取的图标较小，可以使用 [waifu2x](https://www.waifu2x.net/index.zh-CN.html) 进行最大降噪，然后多次放大 logo。其他放大算法会令 logo 变化，而 waifu2x 不会改变原图。
 
 如果图标 svg 不符合要求，可以使用 [SVG-edit](https://svgedit.netlify.app/editor/index.html) 进行简单编辑。
 
@@ -49,8 +49,8 @@ Eagle 导入流程：搜索文件夹中的 ZIP/RAR 文件，确认全部解压�
 
 以下是我常用的几种字体：
 
-- [阿里巴巴普惠体 2.0](https://fonts.alibabagroup.com/#/font)：简称「Alibaba PuHuiTi 2.0」，免费可商用，覆盖中英文。
-- [阿里妈妈数黑体](https://fonts.alibabagroup.com/#/more)：简称「Alimama ShuHeiTi」，数黑体为中文简体字库，适用于电商、广告、品牌形象、推广物料等场景。
+- [阿里巴巴普惠体](https://www.alibabafonts.com/#/font)：简称「Alibaba PuHuiTi 3.0」，免费可商用，覆盖包括中英文等 178 个语种。
+- [阿里妈妈数黑体](https://fonts.alibabagroup.com/#/more)：简称「Alimama ShuHeiTi」，数黑体为中文简体字库，适用于电商、广告、品牌形象、推广物料等场景。另外，阿里妈妈东方大楷的字体非常漂亮，适合 PPT 标题。
 - [思源字体](https://github.com/adobe-fonts/source-han-sans/)：简称「Source Han Sans」，这是比较规规矩矩的一款字体，谷歌出品。用在商务风 PPT，或者是用在正文中，阅读效果都很赞。
 - [FOT-MatissePro](https://www.mianfeiziti.com/fonts-fotmatisseprom)：原本为 EVA 的常用日语字体，也支持大部分的繁体。
 - [优设标题黑](https://www.fonts.net.cn/font-38213257557.html)：简称「YouSheBiaoTiHei-2」，以黑体字型为基础，整体字形沉稳，同时采用较大字面和粗壮的笔画来强化力量感。每个字体水平倾斜 8° 的设计，赋予了字体极强的速度感，为了让字体倾斜后也能保持稳固，设计师将整体字身设定宽扁。而起笔和弯钩上独具匠心的尖角设计，不仅突显了设计的几何感，而且方便后期修改。

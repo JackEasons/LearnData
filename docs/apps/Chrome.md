@@ -1,8 +1,8 @@
 ---
 article: false
 title: Chrome 扩展
-icon: chrome
-order: 5
+icon: fa6-brands:chrome
+order: 3
 ---
 
 常用 Chrome 扩展工具，链接多为 Chrome Web Store 项目页面。
@@ -19,13 +19,15 @@ order: 5
 
 ## 标签页
 
-- [iTab](https://chrome.google.com/webstore/detail/itab%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/mhloojimgilafopcmlcikiidgbbnelip)：自定义你的新标签页。
+- [Custom New Tab URL](https://chromewebstore.google.com/detail/custom-new-tab-url/mmjbdbjnoablegbkcklggeknkfcjkjia)：将新标签页重定向到一个特定的网址。
 
 - [zvTabs](https://chrome.google.com/webstore/detail/zvtabs%E4%B8%80%E9%94%AE%E5%85%B3%E9%97%AD%E5%B7%A6%E4%BE%A7%E6%A0%87%E7%AD%BE/aelfgfndnhaiicaahkbpmgbbnflnbejb)：一键关闭左侧标签。
 
 - [GoTo Tab](https://chrome.google.com/webstore/detail/goto-tab/hjfkaobgkmaeomgdhmhhipdbjdhhjkoi)：关键词搜索，快速定位标签页。
 
 - [Tab Wrangler](https://chrome.google.com/webstore/detail/tab-wrangler/egnjhciaieeiiohknchakcodbpgjnchh)：自动关闭不活动的标签页，并允许您轻松还原找回它们。
+
+- [iTab](https://chrome.google.com/webstore/detail/itab%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5/mhloojimgilafopcmlcikiidgbbnelip)：自定义你的新标签页。
 
 ## 链接批量
 
@@ -53,9 +55,11 @@ order: 5
 
 ## 监视爬虫
 
-- [Auto Refresh Plus | Page Monitor](https://chrome.google.com/webstore/detail/auto-refresh-plus-page-mo/hgeljhfekpckiiplhkigfehkdpldcggm)：定时刷新页面；页面监视器，找到或丢失指定文本时，弹出提示。
+- [Visualping](https://chromewebstore.google.com/detail/visualping/pemhgklkefakciniebenbfclihhmmfcd)：简单的监测扩展，不过只能在浏览器上进行通知。
 
 - [Distill Web Monitor](https://chrome.google.com/webstore/detail/distill-web-monitor/inlikjemeeknofckkjolnjbpehgadgge)：监控网页或源以获取变更，可邮件、手机提示。
+
+- [Auto Refresh Plus | Page Monitor](https://chrome.google.com/webstore/detail/auto-refresh-plus-page-mo/hgeljhfekpckiiplhkigfehkdpldcggm)：定时刷新页面；页面监视器，找到或丢失指定文本时，弹出提示。
 
 - [Check 酱](https://github.com/easychen/checkchan-dist)：网页内容监控工具，可以监测网页内容变化，并发送异动到微信/飞书。Check 酱可以部署在 Docker 或浏览器插件。
 
@@ -71,8 +75,6 @@ order: 5
 
 - [FasterChrome](https://chrome.google.com/webstore/detail/fasterchrome/nmgpnfccjfjhdenioncabecepjcmdnjg)：浏览器预加载链接，提升网络流畅度。
 
-- [SuperCopy](https://chrome.google.com/webstore/detail/supercopy-enable-copy/onepmapfbjohnegdmfhndpefjkppbjkm)：一键破解禁止右键、破解禁止选择、破解禁止复制、破解禁止粘贴，启用复制，启用右键，启用选择，启用粘贴。
-
 - [AutoPagerize](https://chrome.google.com/webstore/detail/autopagerize/igiofjhpmpihnifddepnpngfjhkfenbp)：自动识别 next 或下一页，将网页合并为同一页。2014 年更新，很多规则已失效。
 
 - [pakku](https://chrome.google.com/webstore/detail/pakku%EF%BC%9A%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%BC%B9%E5%B9%95%E8%BF%87%E6%BB%A4%E5%99%A8/jklfcpboamajpiikgkbjcnnnnooefbhh)：合并 B 站视频中绝大多数刷屏弹幕。
@@ -83,22 +85,24 @@ order: 5
 
 - [沉浸式翻译](https://chrome.google.com/webstore/detail/immersive-translate/bpoadfkcbjbfhfodiogcnhhhpibjhbnh)：免费的双语对照网页翻译，[彩云小译](https://chrome.google.com/webstore/detail/lingocloud-web-translatio/jmpepeebcbihafjjadogphmbgiffiajh) 的替代品。
 
+- ~~SuperCopy：一键破解禁止右键、破解禁止选择、破解禁止复制、破解禁止粘贴，启用复制，启用右键，启用选择，启用粘贴。~~ 据 [@sloanlance](https://github.com/rockbenben/LearnData/commit/de155c0fd2cca8e87319b7d659dab12efd56d79a#r139226783) 提醒，SuperCopy 可能涉及按键记录和快捷键干扰，建议不使用。
+
 ## 实用工具
 
-- [Vimium C](https://github.com/gdh1995/vimium-c/blob/master/README-zh.md)：全键盘操作浏览器，建议开启 `chrome://flags/#extensions-on-chrome-urls`。
+- [Tango](https://chrome.google.com/webstore/detail/tango/lggdbpblkekjjbobadliahffoaobaknh/)：将页面操作转化为逐步指导的流程指南。每一步都自动植入截图，并可以通过链接、HTML、Markdown 来分享。
 
-- [SingleFile](https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle/)：完整的网页保存到单个文件中，可以对文件名、HTML 内容、样式、图片、字体等进行调整。
+- [SingleFile](https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle/)：将完整网页保存到单个文件中，可对文件名、HTML 内容、样式、图片、字体等进行调整。
+
+- [Vimium C](https://github.com/gdh1995/vimium-c/blob/master/README-zh.md)：全键盘操作浏览器，建议启用 `chrome://flags/#extensions-on-chrome-urls`。
 
 - [SelectorGadget](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb)：轻松获取网页元素的 CSS Path 或 XPath。
 
-- [Copy as Markdown](https://chrome.google.com/webstore/detail/copy-as-markdown/nlaionblcaejecbkcillglodmmfhjhfi/)：将网页文字转为 markdown 格式文本。
+- [Copy as Markdown](https://chrome.google.com/webstore/detail/copy-as-markdown/nlaionblcaejecbkcillglodmmfhjhfi/)：将网页文字转为 Markdown 格式文本。
 
-- [Get Favicon](https://chrome.google.com/webstore/detail/get-favicon/gpipahagclehninhhjkhbkliinfofnhe)：快速获取当前网站图标。
+- [Get Favicon](https://chrome.google.com/webstore/detail/get-favicon/gpipahagclehninhhjkhbkliinfofnhe)：快速获取当前网站的图标。
 
-- [Tango](https://chrome.google.com/webstore/detail/tango/lggdbpblkekjjbobadliahffoaobaknh/)：快速制作带截图的流程指南，不过较为简单，可以分享为链接，只适合临时分享的网页操作流程。
+- [Similar Sites](https://chrome.google.com/webstore/detail/similar-sites-discover-re/necpbmbhhdiplmfhmjicabdeighkndkn)：发现与当前浏览的网站相似的其他网站。
 
-- [Similar Sites](https://chrome.google.com/webstore/detail/similar-sites-discover-re/necpbmbhhdiplmfhmjicabdeighkndkn)：发现与您当前正在浏览的网站类似的网站。
+- [Wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg/)：查看竞争对手网站使用了哪些技术、工具和第三方服务。
 
-- [Wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg/)：查看竞争对手网站使用哪些技术、工具和第三方服务。
-
-- [Link to Text Fragment](https://chrome.google.com/webstore/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg)：分享网页并将高亮你选中文本 (仅支持 chrome 浏览器)。
+- [Link to Text Fragment](https://chrome.google.com/webstore/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg)：在 Chrome 浏览器中分享网页并突出显示所选文本。

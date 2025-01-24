@@ -1,7 +1,7 @@
 ---
 article: false
 title: Python
-icon: python
+icon: fa6-brands:python
 order: 3
 ---
 
@@ -9,8 +9,8 @@ Python 很久没用了，暂时只做记录作用。
 
 ## 入门文档
 
-- [Python3 语法](http://www.runoob.com/python3/python3-basic-syntax.html)
-- [Scrapy 入门](http://scrapy-chs.readthedocs.io/zh_CN/latest/intro/tutorial.html#intro-tutorial)
+- [Python3 语法](https://www.runoob.com/python3/python3-basic-syntax.html)
+- [Scrapy 入门](https://scrapy-chs.readthedocs.io/zh-cn/latest/intro/tutorial.html#intro-tutorial)
   浮点数：1.23x109 就是 1.23e9，或者 12.3e8，0.000012 可以写成 1.2e-5
 - [requests](https://requests.readthedocs.io/zh_CN/latest/) 模块 - 获取数据
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/) 模块 - 解析 HTML
@@ -140,7 +140,7 @@ swapcase() #将字符串中大写转换为小写，小写转换为大写
 not 1 or 0 and 1 or 3 and 4 or 5
 (not 1) or (0 and 1) or (3 and 4) or 5
 
-![Python 运算符优先级](https://tc.seoipo.com/2022-06-29-18-18-44.png)
+![Python 运算符优先级](https://img.newzone.top/2022-06-29-18-18-44.png?imageMogr2/format/webp)
 
 ## 条件三元表达式
 
@@ -189,7 +189,7 @@ while count:  # 0 为 False，其他为 True
         print("密码正确，进入程序")
         break
     elif "*" in passwd:
-		# end=" "为后缀，可空，默认为换行符
+  # end=" "为后缀，可空，默认为换行符
         print("密码不能含有“*”，你还有",count,"次机会", end=" ")
         continue
     else:

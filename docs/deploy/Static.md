@@ -1,7 +1,7 @@
 ---
 article: false
 title: 静态部署
-icon: generic
+icon: fa6-solid:circle-nodes
 order: 1
 ---
 
@@ -32,11 +32,11 @@ emoji 等可以使用静态资源库上的项目，比如 twemoji，上面有集
 
 ### 部署平台
 
-- Cloudflare：Pages 和 Workers 两类部署方式。
+- Cloudflare 提供了 Pages 和 Workers 两种部署方式：
+  - Pages 部署简便，访问速度在海外较快，但在国内可能存在不稳定情况。同时，page.dev 域名有时可能会遭到屏蔽。为此，你可以选择购买一年期的低成本临时域名以规避此问题。若通过 Git 仓库部署页面，需根据 [Cloudflare 语言支持及工具](https://developers.cloudflare.com/pages/configuration/language-support-and-tools/)指南调整部署环境变量。例如，若使用 yarn 作为构建工具，默认版本为 Yarn 3.6.3，你可能需要手动更改为`YARN_VERSION 1.22.21`。
   - [Workers](../deploy/Cloudflare.html#反向代理)：复制镜像网站，可直接访问，但反向代理稳定性成疑。
-  - Pages：部署简单，外网速度很快，但国内速度不稳，而且 page.dev 域名有时会被墙，可购买便宜的临时域名（一年）来解决该问题。
 - Netlify：国内速度慢点，图片容易卡死，但还算稳定。
-- Vercel：推荐使用 GitHub 账户登录，有可能需要绑定国外手机号（不支持 Voice）。2022.08.26，「\*.vercel.app」域名被 DNS 污染，需要绑定自定义域名。
+- Vercel：推荐使用 GitHub 账户登录，需绑定手机号（不支持 Voice），支持国内手机号。2022.08.26，「\*.vercel.app」域名被 DNS 污染，需要绑定自定义域名。
 - AWS: 邮箱注册，不过需要信用卡认证。
 - 国内平台：Gitee、WuliHub、CODING，都需要实名认证。
 
@@ -61,7 +61,8 @@ cloudflare 接管 pinata 后，ipfs 域名需通过「pinata 托管」>「cloudf
 
 很多人选择 Gitee Pages 作为国内节点，GitHub Actions 将新文档同步到 Gitee，生成位于国内的静态页面 Gitee Pages。但是，Gitee Pages 的限制非常多，免费版无法自定义域名，必须实名验证，更别提近期的下架风波。因此，我没选 Gitee，而是把文档同步到国内服务器（域名需备案）。
 
-!> 注意：文件夹不要有大写字母，否则同步时容易出错。
+::: tip 文件夹名称请勿使用大写字母，否则在同步时容易产生错误。
+:::
 
 ### 同步到 FTP
 

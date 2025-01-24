@@ -1,7 +1,7 @@
 ---
 article: false
 title: Vue
-icon: vue
+icon: fa6-brands:vuejs
 order: 2
 ---
 

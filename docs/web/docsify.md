@@ -1,7 +1,7 @@
 ---
 article: false
 title: docsify
-icon: edit
+icon: simple-icons:docsify
 order: 2
 ---
 

@@ -1,4 +1,4 @@
-// 注意：live2d_path 参数应使用绝对路径
+// live2d_path 参数建议使用绝对路径
 //const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
 const live2d_path = "/live2d-widget/";
 
@@ -31,13 +31,15 @@ if (screen.width >= 768) {
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
 		loadExternalResource(live2d_path + "waifu-tips.js", "js")
 	]).then(() => {
+		// 配置选项的具体用法见 README.md
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
-			//apiPath: "https://live2d-widget.netlify.app/live2d_api/",
-			//cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/"
-			//使用 api 才能完美换装，但测试 netlify 和 Vercel api 部署有问题，推荐自建或使用本地 cdn
-			apiPath: "https://newzone.top/live2d-widget/live2d_api/"
-			//cdnPath: live2d_path + "live2d_api/"
+			// apiPath: "https://live2d.fghrsh.net/api/",
+			// cdnPath: "https://live2d-api.aishort.top/",
+			// apiPath 和 cdnPath 二选一。API 部署复杂，不过性能更佳，能设定模型，切换衣服方便。
+			// 在这里，我们默认使用本地 cdn。如果你选择自建 api，需注释掉 cdnPath。如果需要第三方的 cdnpath，可考虑使用 Vercel + Cloudflare。
+			cdnPath: live2d_path + "live2d_api/",
+			tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
 		});
 	});
 }

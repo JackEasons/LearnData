@@ -1,8 +1,8 @@
 ---
 article: false
 title: GitHub
-icon: github
-order: 3
+icon: fa6-brands:github
+order: 4
 ---
 
 ## GitHub Actions
@@ -13,6 +13,18 @@ GitHub Actions 是一个持续集成和持续交付 (CI/CD) 平台，可用于�
 - [Awesome Actions](https://github.com/sdras/awesome-actions)
 
 如果 GitHub Actions 命令中有涉及密码等私密信息，则进入项目仓库的「Settings」>「Secrets and variables」>「Actions」，添加密钥进行加密处理。比如新建密钥 PERSONAL_TOKEN，Actions 命令中使用 `${{ secrets.PERSONAL_TOKEN }}` 来指代该密钥。
+
+### Dependabot
+
+Dependabot 是 GitHub 提供的官方自动化工具，可监视项目中使用的依赖项中的漏洞，并确保这些依赖项保持最新。你可以使用[常用 Dependabot 自动化](https://docs.github.com/zh/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions#common-dependabot-automations) 中的 GitHub Actions 命令，使 Dependabot 自动完成依赖的标记、批准拉取请求以及合并操作。如果仍有疑问，可以参考 tools-by-ai 中的 [.github](https://github.com/rockbenben/tools-by-ai/tree/main/.github) 配置。
+
+完成上述配置后，Actions 可能会报错 `failed to create review: GraphQL: GitHub Actions is not permitted`。这是由于 Actions 权限未开启的原因。我们需要继续进行以下设置：
+
+1. 进入项目仓库的「Settings」。
+2. 选择「General」>「Pull Requests」，勾选 `Allow auto-merge`，以赋予 Actions 合并操作权限。
+3. 在同一界面，选择「Code and automation」>「Actions」>「General」>「Workflow permissions」，选中 `Read and write permissions`，并勾选 `Allow GitHub Actions to create and approve pull requests`，然后点击保存。这样可以授予 Actions 批准拉取请求的权限。
+
+注意：GitHub Free 账户只支持在公共仓库中使用自动标记、批准拉取请求以及合并操作。
 
 ### 不同仓库间复制
 
@@ -72,7 +84,7 @@ jobs:
 
 ## Git Commit
 
-Commit message 远比你想象中的重要，它可以帮助你自动生成 Change log。在我最初的项目中，每次提交都写 update，这导致很难回溯，我也不知道更新了什么。建议新手全部按照 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/) 的规范来进行提交。
+标准化的 Commit message 可以提供清晰、易读的历史记录，使我们更容易理解每个提交的目的和内容，这有助于追踪和审查代码变更。通过 [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli) 可以自动生成 CHANGELOG.md。建议都按照 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/) 的规范来进行提交。
 
 ```shell
 <type>[optional scope]: <description>
@@ -106,6 +118,12 @@ Scope 用于说明 commit 影响的范围，比如 Controller、DAO、View 等�
 
 如果当前 commit 针对某个 issue，那么可以在 Footer 部分使用 `Closes #265` 关闭这个 issue。也可以在任意位置输入 `#265`，将 commit 与对应问题相关联。
 
+## Pull Requests
+
+在 GitHub 中，有三种常见的 Pull Request（PR）合并方式：Create a merge commit（创建合并提交），Squash and merge（压缩合并）和 Rebase and merge（变基合并）。
+
+一般情况下，推荐使用 Squash and merge。在项目仓库的「Settings」中，选择「General」>「Pull Requests」，取消勾选 `Allow merge commits` 和 `Allow rebase merging`，即可默认显示 Squash and merge。
+
 ## 常见问题
 
 ### GitHub 忽略指定文件
@@ -113,3 +131,14 @@ Scope 用于说明 commit 影响的范围，比如 Controller、DAO、View 等�
 项目路径新建一个命名为 .gitignore 的文件，将想要忽略的文件夹和文件写入 .gitignore 文件，换行分隔。
 
 比如要忽略 node_modules 文件夹，就直接在文件中输入 node_modules。
+
+### 添加 Github 源作为依赖
+
+一般情况下，依赖包会使用 npm 进行管理。但有时开发者可能并不会立即更新到 npm 上，这时我们可以选择使用 GitHub 源作为备用方案。
+
+另外，在国内服务器连接不上 GitHub 的情况下，可以先使用 npm 安装依赖包，然后手动替换 node_modules 目录中对应的源为下载好的文件。
+
+```shell
+yarn add strapi-google-auth
+yarn add https://github.com/arjusmoon860/strapi-google-auth.git
+```

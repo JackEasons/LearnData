@@ -1,7 +1,7 @@
 ---
 article: false
 title: 正则表达式
-icon: regexp
+icon: fa6-solid:repeat
 order: 6
 ---
 

@@ -1,7 +1,7 @@
 ---
 article: false
 title: VuePress
-icon: vue
+icon: fa6-brands:vuejs
 order: 1
 ---
 
@@ -9,23 +9,23 @@ order: 1
 
 不过，VuePress 网站需要依赖包环境，生成的静态文件在本地运行会缺少组件，需要服务器或其他云服务上运行。如果本地部署中出现未知 bug，推荐使用 [StackBlitz](https://stackblitz.com/) 在线 IDE 工具测试，打开 `https://stackblitz.com/github/用户名/仓库名` 即可将对应 GitHub 仓库导入 StackBlitz。开发时，建议用 dev 命令测试，这样可以查看打包前的动态代码，发现组件间的内部链接。
 
-LearnData 的主题为 [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/guide/)，图标为 [Iconfont 精选图标](https://theme-hope.vuejs.press/zh/guide/interface/icon.html#iconfont-%E7%B2%BE%E9%80%89%E5%9B%BE%E6%A0%87)，页面修改查看 [样式配置](https://theme-hope.vuejs.press/zh/config/style.html)，其他主题和插件参考 [Awesome VuePress V2](https://github.com/vuepress/awesome-vuepress/blob/main/v2.md) 和 [看板娘](https://www.npmjs.com/package/vuepress-plugin-helper-live2d)。
+LearnData 的主题为 [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/guide/)，图标来自 [fontawesome](https://theme-hope.vuejs.press/zh/guide/interface/icon.html#%E8%AE%BE%E7%BD%AE%E5%9B%BE%E6%A0%87)，页面修改查看 [样式配置](https://theme-hope.vuejs.press/zh/config/style.html)，其他主题和插件参考 [Awesome VuePress V2](https://github.com/vuepress/awesome-vuepress/blob/main/v2.md) 和 [看板娘](https://www.npmjs.com/package/vuepress-plugin-helper-live2d)。
 
 ## 初始配置
 
 1. 环境配置：安装 pnpm，也支持 npm 和 yarn，可参考[环境部署教程](../deploy/VPS.html#环境部署)。
-2. 新建文件夹，然后在该路径下运行命令 `pnpm create vuepress-theme-hope@next docs`。vuepress-theme-hope 主题的样例文件会存储在该路径下。有时因版本问题，样例运行会报错，此时须用固定版本号来安装依赖环境，终端中输入 `pnpm add vuepress@2.0.0-beta.60 @vuepress/client@2.0.0-beta.60 vuepress-theme-hope@2.0.0-beta.155 && pnpm docs:dev`。
+2. 新建文件夹，然后在该路径下运行命令 `pnpm create vuepress-theme-hope docs`。vuepress-theme-hope 主题的样例文件会存储在该路径下。有时因版本问题，样例运行会报错，此时须用固定版本号来安装依赖环境，终端中输入 `pnpm add vuepress@2.0.0-beta.64 @vuepress/client@2.0.0-beta.64 vuepress-theme-hope@2.0.0-beta.230 && pnpm docs:dev`。
 3. 执行命令 `pnpm docs:dev` 启动样例网站。
 4. `docs\.vuepress` 路径下的 config.ts，navbar.ts，sidebar.ts，theme.ts 可以修改页面属性，设置方法参考 [官方案例](https://github.com/vuepress-theme-hope/vuepress-theme-hope/tree/main/docs/theme/src/.vuepress)。
    - config.ts：配置网站环境依赖和网站属性。
    - sidebar.ts：侧边栏，集合所有文档的目录。
    - navbar.ts：导航栏，放最常用的文档链接。
    - theme.ts：对主题和插件进行设置。
-5. 如果遇到报错，执行命令 `pnpm add vuepress@next vuepress-theme-hope@next && pnpm i && pnpm up` 修复并升级相关依赖包。如果依然有问题，则删除 node_modules 和 lock 文件，执行 `npm install && pnpm i && pnpm up` 重置依赖包文件。
+5. 如果遇到报错，执行命令 `pnpm add vuepress@next vuepress-theme-hope && pnpm i && pnpm up` 修复并升级相关依赖包。如果依然有问题，则删除 node_modules 和 lock 文件，执行 `pnpm install && pnpm i && pnpm up` 重置依赖包文件。
 
 如果遇到错误 `[ERR_MODULE_NOT_FOUND]: Cannot find package`，则将 package.json 放在 demo project 中生成 lock 文件，比对 lock 文件是否为正确生成依赖树，将正确的 lock 文件复制到项目下。
 
-每个插件和主题版本只支持一个 VuePress 版本，因此要稳定的话，需用固定版本号的环境依赖才可以，比如主题 `vuepress-theme-hope@2.0.0-beta.155` 仅支持 `vuepress@2.0.0-beta.60`。如果要测试最新的环境配置，可使用 `pnpm add vuepress@next vuepress-theme-hope@next @vuepress/plugin-google-analytics@next @vuepress/plugin-search@next @vuepress/plugin-docsearch@next && pnpm i && pnpm up`。
+每个插件和主题版本只支持一个 VuePress 版本，因此要稳定的话，需用固定版本号的环境依赖才可以，比如主题 `vuepress-theme-hope@2.0.0-beta.230` 仅支持 `vuepress@2.0.0-beta.64`。如果你需要升级主题和 VuePress 版本，请执行以下命令 `pnpm dlx vp-update`。
 
 ## 搜索插件
 
@@ -37,7 +37,9 @@ LearnData 的主题为 [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/g
 
 ## Webpack 打包
 
-VuePress v2 默认使用 Vite，打包时会引入时间戳和 hash 对文件重命名，导致网站大部分的文件发生更改。即使你并没有更新文章，生成的静态文件也会改变。比如我的笔记网站用的 VuePress 默认配置，每次服务器部署需要 5-15 分钟。
+从 VuePress 2.0.0-rc.2 版本起，你可以自由选择 Vite 或 Webpack 作为打包工具。使用 Vite 进行打包时，系统会引入时间戳和 hash 值对文件进行重命名。这一机制虽然保证了文件的唯一性，但同时也带来了一个问题：即使没有更新内容，网站的大部分文件在每次生成时也会发生改变。例如，在我的 VuePress 默认配置的笔记网站中，每次服务器部署都需耗费 5 至 15 分钟的宝贵时间。新版的 LearnData 已经默认采用了 Webpack 作为打包工具，因此无需手动切换。
+
+早期的 VuePress 只支持 Vite 打包。因此，我记录了手动添加 webpack 的方法，作为备用。
 
 如果不想每次架构都重命名文件，可以复制「[nohashname](https://github.com/rockbenben/LearnData/tree/nohashname)」branch。我把 nohashname 分支的打包工具换成了 [Webpack](https://v2.vuepress.vuejs.org/zh/guide/bundler.html)，并用 chainWebpack 设置文件命名规则，避免文件非必要重命名。
 
@@ -47,7 +49,7 @@ VuePress v2 默认使用 Vite，打包时会引入时间戳和 hash 对文件重
 
    ```bash
    #组合命令，打包使用 Webpack
-   pnpm add vuepress@next vuepress-theme-hope@next && pnpm remove vuepress && pnpm add vuepress-webpack@next sass-loader && pnpm i && pnpm up
+   pnpm add vuepress@next vuepress-theme-hope && pnpm remove vuepress && pnpm add vuepress-webpack@next sass-loader && pnpm i && pnpm up
 
    #运行在本地服务器
    yarn docs:dev
@@ -57,7 +59,7 @@ VuePress v2 默认使用 Vite，打包时会引入时间戳和 hash 对文件重
 
    ```bash
    #确保你正在使用最新的 vuepress 和 vuepress-theme-hope 版本
-   pnpm add vuepress@next vuepress-theme-hope@next
+   pnpm add vuepress@next vuepress-theme-hope
 
    #更换打包工具，Webpack 需手动下载 sass-loader
    pnpm remove vuepress
@@ -70,7 +72,7 @@ VuePress v2 默认使用 Vite，打包时会引入时间戳和 hash 对文件重
    pnpm i && pnpm up
    ```
 
-3. 修改文件命名规则：打开 config.ts，使用 [webpack-chain](https://github.com/Yatoo2018/webpack-chain/tree/zh-cmn-Hans) 修改 webpack 输出文件名规则，停止对 js 文件 hashname。^[[chainWebpack 常用配置方式](https://blog.csdn.net/song854601134/article/details/121340077)] `.filename` 加路径容易报错，这里只把 chunk 文件放入子文件夹。
+3. 修改文件命名规则：打开 config.ts，使用 [webpack-chain](https://github.com/neutrinojs/webpack-chain) 修改 webpack 输出文件名规则，停止对 js 文件 hashname。^[[chainWebpack 常用配置方式](https://blog.csdn.net/song854601134/article/details/121340077)] `.filename` 加路径容易报错，这里只把 chunk 文件放入子文件夹。
 
    ```ts
    export default defineUserConfig({
@@ -100,7 +102,7 @@ VuePress [Build 配置项](https://vuepress.github.io/zh/reference/config.html#b
 
 VuePress 页面生成规则基于主题模板，如果修改全站 html 内容，最简单的方式就是修改模板。
 
-我的主题模板文件是 `@vuepress-theme-hope/templates/index.build.html`，将其下载到本地后，修改为你想要的样式，放入 .vuepress 文件夹内。最后在 config.ts 中添加代码，即可启用修改模板。
+我的主题模板文件是 [@vuepress-theme-hope/templates/index.build.html](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/theme/templates/index.build.html)，将其下载到本地后，修改为你想要的样式，放入 .vuepress 文件夹内。最后在 config.ts 中添加代码，即可启用修改模板。
 
 ```ts
 import { path } from "@vuepress/utils";
@@ -163,6 +165,7 @@ export default hopeTheme({
 
 ## 自定义主题
 
+- [x] ~~创建独立的笔记区，便于整理生活感悟与专题文章。尽管仍使用同一侧边栏，但可设定为仅展示个别领域，适应文章数量众多的场景。~~
 - [x] ~~插入 Bilibili 或第三方视频，可使用专用 [组件库](https://vuepress-theme-hope.github.io/v2/components/zh/guide/)，配置参考 [组件案例 config.ts](https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/demo/components/src/.vuepress/config.ts).~~
 - [x] ~~插件[docsearch](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html)：将 Algolia DocSearch 集成到 VuePress 中，为你的文档网站提供搜索功能。~~
 - [x] ~~README 页面如何隐藏，使用 index: false，参考[主题设置](https://theme-hope.vuejs.press/zh/guide/layout/sidebar.html#%E9%80%9A%E8%BF%87%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90)~~
